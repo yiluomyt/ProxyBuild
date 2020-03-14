@@ -29,4 +29,9 @@ cd ../../
 echo "--- Build for Deploy ---"
 npm install
 npm run build
+if [ ! -d "public/Images" ]; then
+  mkdir public/Images
+fi
+echo "--- Copy Images ---"
+cp -r content/blog/Images/* -t public/Images
 cd ..
